@@ -1,4 +1,4 @@
-# Energy Consumption Prediction using Time-Series Data
+# Energy Consumption Prediction Using Time-Series Data
 
 In this project, I aim to predict the energy consumption for a specific region using historical time-series data. The dataset contains energy usage values measured in megawatts, which are crucial for understanding patterns and making informed decisions in energy management.
 
