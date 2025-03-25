@@ -5,9 +5,9 @@ In this project, I aim to predict the energy consumption for a specific region u
 The objective of this analysis is to develop a model capable of forecasting future energy consumption based on past trends. This notebook demonstrates the process of time-series forecasting, from data exploration and feature engineering to model development and evaluation. Time-series data requires specific handling due to its temporal structure, making this task both challenging and valuable for accurate predictions.
 
 Input Features:
-- The input data comes from a Kaggle dataset, and consists of two columns:
-      - "Datetime"
-      - "AEP_MW": Megawatts per hour
+- The input data comes from a Kaggle dataset, and consists of two columns: <br/>
+      - "Datetime" <br/>
+      - "AEP_MW": Megawatts per hour <br/>
 - I also extracted a few more features, including Holidays, from the "Datetime" in order to increase the model accuracy:
       - "hour": hour in the day
       - "day_of_week": day of week, numbered 0 - 6
