@@ -8,18 +8,18 @@ Input Features:
 - The input data comes from a Kaggle dataset, and consists of two columns: <br/>
       - "Datetime" <br/>
       - "AEP_MW": Megawatts per hour <br/>
-- I also extracted a few more features, including Holidays, from the "Datetime" in order to increase the model accuracy:
-      - "hour": hour in the day
-      - "day_of_week": day of week, numbered 0 - 6
-      - "quarter": dividing the year into 4 quarters
-      - "month": month of the year
-      - "year"
-      - "day_of_the_year": days numbered from 1 - 365
-      - "day": day of the month, 1 - 28/29/30/31
-      - "christmas"
-      - "halloween"
-      - "fouth_of_july"
-      - "thanksgiving"
-      - "easter"
+- I also extracted a few more features, including Holidays, from the "Datetime" in order to increase the model accuracy: <br/>
+      - "hour": hour in the day <br/>
+      - "day_of_week": day of week, numbered 0 - 6 <br/>
+      - "quarter": dividing the year into 4 quarters <br/>
+      - "month": month of the year <br/>
+      - "year" <br/>
+      - "day_of_the_year": days numbered from 1 - 365  <br/>
+      - "day": day of the month, 1 - 28/29/30/31 <br/>
+      - "christmas" <br/>
+      - "halloween" <br/>
+      - "fouth_of_july" <br/>
+      - "thanksgiving" <br/>
+      - "easter" <br/>
 
 In addition to extracting the Holidays, I also wanted to consider that a few of them are considered "party holidays", meaning that if the actual Holiday doesn't fall on the weekend, then we can assume that it is also getting celebrated on the nearest weekend to the actual day (such as Halloween, 4th of July, and New Year). This is an overkill and does result in a slightly worse RMSE than the model which only considered the actual holiday days, however I do think this was something worth considering initially, so I will leave it in.   
