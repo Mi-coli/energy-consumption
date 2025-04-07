@@ -4,7 +4,7 @@ Python version: 3.11.7 <br/>
 
 This project focuses on predicting energy consumption for a specific region using historical time-series data. The dataset includes energy usage values measured in megawatts (MW), which are essential for identifying patterns and making informed decisions in energy management.
 
-The primary objective is to develop a model that accurately forecasts future energy consumption based on historical trends. This notebook walks through the full pipeline—from data exploration and feature engineering to model training and evaluation—with an emphasis on handling time-series data, which presents unique challenges due to its temporal dependencies.
+The primary objective is to develop a model that accurately forecasts future energy consumption based on historical trends. This notebook walks through the full pipeline, from data exploration and feature engineering to model training and evaluation, placing an emphasis on handling time-series data, which presents unique challenges due to its temporal dependencies.
 
 Dataset
 The dataset is sourced from Kaggle and contains the following original columns:
