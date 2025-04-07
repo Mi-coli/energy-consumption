@@ -1,30 +1,54 @@
-# Energy Consumption Prediction Using Time-Series Data
+# Energy Consumption Forcasting Using Time-Series Data
 
 Python version: 3.11.7 <br/>
-In this project, I aim to predict the energy consumption for a specific region using historical time-series data. The dataset contains energy usage values measured in megawatts, which are crucial for understanding patterns and making informed decisions in energy management.
 
-The objective of this analysis is to develop a model capable of forecasting future energy consumption based on past trends. This notebook demonstrates the process of time-series forecasting, from data exploration and feature engineering to model development and evaluation. Time-series data requires specific handling due to its temporal structure, making this task both challenging and valuable for accurate predictions.
+This project focuses on predicting energy consumption for a specific region using historical time-series data. The dataset includes energy usage values measured in megawatts (MW), which are essential for identifying patterns and making informed decisions in energy management.
 
-Input Features:
-- The input data comes from a Kaggle dataset, and consists of two columns: <br/>
-      - "Datetime" <br/>
-      - "AEP_MW": Megawatts per hour <br/>
-- I also extracted a few more features, including Holidays, from the "Datetime" in order to increase the model accuracy: <br/>
-      - "hour": hour in the day <br/>
-      - "day_of_week": day of week, numbered 0 - 6 <br/>
-      - "quarter": dividing the year into 4 quarters <br/>
-      - "month": month of the year, 1 - 12 <br/>
-      - "year" <br/>
-      - "day_of_the_year": days numbered from 1 - 365  <br/>
-      - "day": day of the month, 1 - 28/29/30/31 <br/>
-      - "christmas" <br/>
-      - "halloween": October 31st + nearest weekend <br/>
-      - "fouth_of_july": 4th of July + nearest weekend <br/>
-      - "thanksgiving" <br/>
-      - "easter" <br/>
-      - "new_year": New Year + nearest weekend <br/>
+The primary objective is to develop a model that accurately forecasts future energy consumption based on historical trends. This notebook walks through the full pipeline—from data exploration and feature engineering to model training and evaluation—with an emphasis on handling time-series data, which presents unique challenges due to its temporal dependencies.
 
-In addition to extracting the Holidays, I also wanted to consider that a few of them are considered "party holidays", meaning that if the actual Holiday doesn't fall on the weekend, then we can assume that it is also getting celebrated on the nearest weekend to the actual day (such as Halloween, 4th of July, and New Year). This is an overkill and does result in a slightly worse RMSE than the model which only considered the actual holiday days, however I do think this was something worth considering initially, so I will leave it in. <br/>   
+Dataset
+The dataset is sourced from Kaggle and contains the following original columns:
 
-** TODO**  <br/>
-Train on full dataset and use the model to make predictions
+Datetime: Timestamp of the observation
+
+AEP_MW: Energy consumption (in megawatts)
+
+Engineered Features
+To enhance model performance, several additional features were extracted from the Datetime column:
+
+hour: Hour of the day
+
+day_of_week: Day of the week (0 = Monday, 6 = Sunday)
+
+quarter: Year quarter (1–4)
+
+month: Month (1–12)
+
+year: Year of the observation
+
+day_of_year: Day of the year (1–365)
+
+day: Day of the month
+
+Holiday Indicators
+Several holidays were also incorporated as binary features to capture potential consumption patterns:
+
+christmas
+
+halloween
+
+fourth_of_july
+
+thanksgiving
+
+easter
+
+new_year
+
+For some holidays, like Halloween, Fourth of July, and New Years, an additional heuristic was applied to account for "party holidays". If the actual holiday doesn't fall on a weekend, it's assumed that celebrations may occur on the nearest weekend. Although this approach slightly worsened the RMSE compared to using only the actual holiday dates, it was an intentional design choice to test the hypothesis that celebration-adjusted days may impact energy usage.
+
+🚧 TODO
+ Train the model on the full dataset
+
+ Use the trained model to generate and visualize future predictions
+
