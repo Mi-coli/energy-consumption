@@ -1,6 +1,6 @@
 import pandas as pd
 import xgboost as xgb
-from helper_functions import feature_extraction, create_lag
+from helper_functions import *
 
 
 df = pd.read_csv("AEP_hourly.csv", parse_dates=["Datetime"], index_col="Datetime")
@@ -20,12 +20,6 @@ df_and_future = feature_extraction(df_and_future)
 df_and_future = create_lag(df_and_future)
 
 future = df_and_future.query("is_future")
-
-# Use same model definition as in train.py
-FEATURES = [
-    "hour", "day_of_week", "month", "year", "day_of_year", "day",
-    "christmas", "thanksgiving", "lag_one_year", "lag_two_years", "lag_three_years"
-]
 
 reg = xgb.XGBRegressor(
     base_score=0.5,

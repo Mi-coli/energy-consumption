@@ -1,13 +1,7 @@
 import pandas as pd
 import xgboost as xgb
 from sklearn.model_selection import TimeSeriesSplit
-from helper_functions import feature_extraction, create_lag
-
-FEATURES = [
-    "hour", "day_of_week", "month", "year", "day_of_year", "day",
-    "christmas", "thanksgiving", "lag_one_year", "lag_two_years", "lag_three_years",
-]
-TARGET = ["AEP_MW"]
+from helper_functions import *
 
 # Load and clean dataset
 df = pd.read_csv("AEP_hourly.csv", parse_dates=["Datetime"], index_col="Datetime")

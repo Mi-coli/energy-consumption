@@ -1,6 +1,12 @@
 import pandas as pd
 from dateutil.easter import easter
 
+FEATURES = [
+    "hour", "day_of_week", "month", "year", "day_of_year", "day",
+    "christmas", "thanksgiving", "lag_one_year", "lag_two_years", "lag_three_years"
+]
+TARGET = ["AEP_MW"]
+
 def feature_extraction(df):
     """
     Extracts time-based and holiday-related features from a DataFrame with a datetime index.
