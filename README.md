@@ -47,6 +47,4 @@ Several holidays were also incorporated as binary features to capture potential 
 
 For some holidays, like Halloween, Fourth of July, and New Years, an additional heuristic was applied to account for "party holidays". If the actual holiday doesn't fall on a weekend, it's assumed that celebrations may occur on the nearest weekend. Although this approach slightly worsened the RMSE compared to using only the actual holiday dates, it was an intentional design choice to test the hypothesis that celebration-adjusted days may impact energy usage.
 
-🚧 TODO
-Clean up EDA notebook and create .py files
 
