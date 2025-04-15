@@ -33,5 +33,7 @@ for train_idx, val_idx in tss.split(df):
     )
 
     print(f"Training fold {fold}...")
-    reg.fit(X_train, y_train, eval_set=[(X_train, y_train), (X_test, y_test)], verbose=100)
+    reg.fit(
+        X_train, y_train, eval_set=[(X_train, y_train), (X_test, y_test)], verbose=100
+    )
     fold += 1

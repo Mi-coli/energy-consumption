@@ -1,11 +1,22 @@
 import pandas as pd
 from dateutil.easter import easter
 
+# Define train and target features to use for the model
 FEATURES = [
-    "hour", "day_of_week", "month", "year", "day_of_year", "day",
-    "christmas", "thanksgiving", "lag_one_year", "lag_two_years", "lag_three_years"
+    "hour",
+    "day_of_week",
+    "month",
+    "year",
+    "day_of_year",
+    "day",
+    "christmas",
+    "thanksgiving",
+    "lag_one_year",
+    "lag_two_years",
+    "lag_three_years",
 ]
 TARGET = ["AEP_MW"]
+
 
 def feature_extraction(df):
     """
